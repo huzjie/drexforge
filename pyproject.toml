@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drexforge"
+version = "0.1.0"
+description = "Drex-forge: a zero-dependency reference implementation of a direct-scoring decision model (Drex Max style). A hybrid Gated DeltaNet + full-attention backbone (linear-time recurrence, full attention every 4th layer) encodes a context in one pass, and an option-scoring head returns a probability for every option without generating text. Three question types (choice / yesno / ordinal), a reproducible skill benchmark, and a backbone cost ablation. Pure Python, no numpy/torch/requests."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "drexforge contributors" }]
+keywords = ["decision-model", "gated-deltanet", "linear-attention", "hybrid-backbone", "option-scoring", "calibration", "no-text-generation", "system-one", "efficient-transformers", "zero-dependency", "python"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.scripts]
+drexforge = "drexforge.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["drexforge*"]

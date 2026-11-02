@@ -1,0 +1,6 @@
+# calibration: medium skill to show the confidence/accuracy (ECE) gap
+backbone:
+  mode: hybrid
+model:
+  skill: 0.7
+  decision_temperature: 6.0

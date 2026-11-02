@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  drexforge:
+    build: .
+    container_name: drexforge
+    ports:
+      - "8431:8431"
+    environment:
+      PYTHONUNBUFFERED: "1"
+    command: ["python", "-m", "drexforge.cli", "serve", "--host", "0.0.0.0", "--port", "8431"]

@@ -1,0 +1,7 @@
+# routing: agent / tool selection demo
+backbone:
+  mode: hybrid
+  seq_len: 32
+model:
+  skill: 0.9
+  decision_temperature: 6.0

@@ -1,0 +1,13 @@
+# full: expert model + hybrid backbone (default composition)
+backbone:
+  mode: hybrid
+  n_layers: 12
+  full_every: 4
+  seq_len: 32
+model:
+  skill: 1.0
+  decision_temperature: 6.0
+scorer:
+  temperature: 6.0
+report:
+  format: markdown

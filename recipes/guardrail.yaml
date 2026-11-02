@@ -1,0 +1,6 @@
+# guardrail: yes/no policy verdicts at high skill
+backbone:
+  mode: hybrid
+model:
+  skill: 0.95
+  decision_temperature: 6.0

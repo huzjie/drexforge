@@ -1,0 +1,7 @@
+# minimal: random skill, small/fast reference
+backbone:
+  mode: delta
+  n_layers: 8
+  seq_len: 16
+model:
+  skill: 0.5

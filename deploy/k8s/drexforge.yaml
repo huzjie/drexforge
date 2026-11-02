@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: drexforge
+  labels:
+    app: drexforge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: drexforge
+  template:
+    metadata:
+      labels:
+        app: drexforge
+    spec:
+      containers:
+        - name: drexforge
+          image: drexforge:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8431
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8431
+            initialDelaySeconds: 3
+            periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: drexforge
+spec:
+  selector:
+    app: drexforge
+  ports:
+    - port: 8431
+      targetPort: 8431
+  type: ClusterIP
